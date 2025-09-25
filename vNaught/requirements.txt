@@ -1,0 +1,5 @@
+# Optional dependencies for RAG and local LLM usage
+scikit-learn
+transformers
+torch  # optional but recommended for transformers local models
+sentence-transformers  # optional: used for semantic reranking (hybrid RAG)
