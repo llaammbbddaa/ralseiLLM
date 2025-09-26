@@ -28,13 +28,13 @@ def grabEmotion(response):
 	response = response[4 + len(foundEmotion):]
 
 	# returning as list because both response and emotion are needed as inputs or the chatbox
-	return [response, emotions[minIndex]]
+	return [response, foundEmotion]
 
 ralsei = ChatboxRenderer()
-command = input("enter phrase >> ")
-prompt = grabEmotion(stringToCmd(command))
 
-print(prompt[1])
-sleep(5)
+while True:
+	command = input("enter phrase >> ")
+	prompt = grabEmotion(stringToCmd(command))
 
-ralsei.display(prompt[0], prompt[1])
+	ralsei.display(prompt[0], prompt[1])
+	print("emotion >> " + prompt[1])

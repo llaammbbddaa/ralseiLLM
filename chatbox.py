@@ -95,7 +95,7 @@ class ChatboxRenderer:
             
         return final_output
 
-    def display(self, text: str, emotion: str = 'neutral', typing_speed: float = 0.03) -> None:
+    def display(self, text: str, emotion: str = 'neutral', typing_speed: float = 0.01) -> None:
         """Display the chatbox with animated text typing effect."""
         # Clear screen once at the start
         os.system('cls' if os.name == 'nt' else 'clear')
