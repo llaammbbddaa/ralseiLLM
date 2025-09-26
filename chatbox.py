@@ -14,8 +14,8 @@ class ChatboxRenderer:
         emotions = {
             'happy': ':)',
             'sad': ':(',
-            'surprised': ':o',
-            'neutral': ':|'
+            'mad': ':<',
+            'surprised': ':o'
         }  # Default fallback emotions
         
         try:
@@ -59,7 +59,7 @@ class ChatboxRenderer:
     def _get_frame_lines(self, text: str, emotion: str, current_char_count: int) -> List[str]:
         """Generate the lines for a single frame of the animated text display."""
         # Get emotion art
-        art = self.emotions.get(emotion.lower(), self.emotions['neutral'])
+        art = self.emotions.get(emotion.lower(), self.emotions['happy'])
         art_lines = art.split('\n')
         
         # Create partial text for animation
