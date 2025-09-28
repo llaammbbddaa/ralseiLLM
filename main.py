@@ -17,6 +17,7 @@ def stringToCmd(command):
 def grabEmotion(response):
 	emotions = ["happy", "sad", "surprised", "mad"]
 	minIndex = len(response)      # start with a big index
+	foundEmotion = None
 
 	for i in emotions:
 		idx = response.find(i)
@@ -26,6 +27,11 @@ def grabEmotion(response):
 
 	# removes the emotion text, doesnt need to be there, cringe enough as it is
 	response = response[4 + len(foundEmotion):]
+
+	# i could init it as some emotion already, but idk, i feel like this is better
+	# especially if i decide to change it later
+	if (foundEmotion is None):
+		foundEmotion = "happy"
 
 	# returning as list because both response and emotion are needed as inputs or the chatbox
 	return [response, foundEmotion]
